@@ -1,0 +1,11 @@
+__pycache__
+archive
+keys
+myenv
+pickles
+wavs
+
+list.txt
+log.txt
+no-video-log.txt
+o.*
