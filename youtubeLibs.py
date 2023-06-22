@@ -2,8 +2,8 @@
 
 import os
 import subprocess
-
 import re
+
 
 def GetUrlType(url):#channel or UserChannel or Video or Other
     pattern_channel = re.compile(r'(https?://)?(www\.)?(youtube\.com/channel/)(.*)')
@@ -34,8 +34,10 @@ def YTDownload(id):
     if os.path.exists(out_path):
         return out_path
     url=f'https://youtu.be/{id}'
+    
+    
     try:
-        subprocess.run(f"youtube-dl --extract-audio --audio-format wav -o wavs/download/%(id)s.%(ext)s {url}")
+        os.system(f'yt-dlp -x --audio-format wav -o "./wavs/download/%(id)s.%(ext)s" {url}')
         # os.rename(f'{id}.wav',f'wavs/{id}.wav')
         return out_path
     except:
@@ -44,3 +46,4 @@ def YTDownload(id):
 
 if __name__ == "__main__":
     YTDownload("https://youtu.be/K4xLi8IF1FM")
+    

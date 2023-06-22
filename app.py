@@ -8,12 +8,12 @@ CORS(app)
 
 
 @app.route("/", methods=["GET"])
-def main():
+def top():
     status_code=200
     return jsonify({"res":"hello!!"}),status_code
 
 @app.route("/api", methods=["GET"])
-def main():
+def api():
     url = request.args.get("url")
     dic,status_code=main(url,save_pickle=True,save_firestore=False)
     return jsonify(dic),status_code

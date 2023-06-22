@@ -31,7 +31,7 @@ def main(url,save_pickle=False,save_firestore=False):
         video_id,video_title=GetGoodVideoFromChannel(id)
     elif url_type=="UserChannel":
         channel_info=GetChannelInfo(id,is_user_channel=True)
-        channel_id=channel_info.channel_id
+        channel_id=channel_info["channel_id"]
         video_id,video_title=GetGoodVideoFromChannel(channel_info["channel_id"])
     else:
         return {'msg': 'invalid url'}, 400
