@@ -15,3 +15,11 @@ db = firestore.client()
 def AddData(docname, data):
     doc_ref = db.collection(u'vtubers').document(docname)
     doc_ref.set(data)
+
+def ReadData():
+    docs = db.collection(u'vtubers').stream()
+    return list(docs)
+
+
+def DelData(docname):
+    db.collection(u'vtubers').document(docname).delete()

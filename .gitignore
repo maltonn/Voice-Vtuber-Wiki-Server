@@ -4,8 +4,10 @@ keys
 myenv
 pickles
 wavs
+cache
 
 list.txt
 log.txt
 no-video-log.txt
 o.*
+
